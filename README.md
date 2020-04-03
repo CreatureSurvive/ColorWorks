@@ -1,6 +1,8 @@
 # ColorWorks
 A simple and usable color picker framework for iOS
 
+![colorworks_preview](assets/colorworks_preview.png)
+
 ---
 ## Author
 

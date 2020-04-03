@@ -3,17 +3,97 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8F4ED332436427500967F82 /* ColorWorks.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED312436427500967F82 /* ColorWorks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F4ED332436427500967F82 /* ColorWorks.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED312436427500967F82 /* ColorWorks.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F4ED3C243642F800967F82 /* CWColorSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED3A243642F800967F82 /* CWColorSlider.h */; platformFilter = ios; };
+		B8F4ED3D243642F800967F82 /* CWColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED3B243642F800967F82 /* CWColorSlider.m */; platformFilter = ios; };
+		B8F4ED41243668F500967F82 /* UIColor+ColorWorks_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED3F243668F500967F82 /* UIColor+ColorWorks_Internal.h */; platformFilter = ios; };
+		B8F4ED42243668F500967F82 /* UIColor+ColorWorks_Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED40243668F500967F82 /* UIColor+ColorWorks_Internal.m */; platformFilter = ios; };
+		B8F4ED45243669E900967F82 /* CWSliderType.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED44243669E900967F82 /* CWSliderType.h */; platformFilter = ios; };
+		B8F4ED4924366B4200967F82 /* CWGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED4724366B4100967F82 /* CWGradientView.h */; platformFilter = ios; };
+		B8F4ED4A24366B4200967F82 /* CWGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED4824366B4200967F82 /* CWGradientView.m */; platformFilter = ios; };
+		B8F4ED4D24366CED00967F82 /* UIColor+ColorWorks.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED4B24366CED00967F82 /* UIColor+ColorWorks.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F4ED4E24366CED00967F82 /* UIColor+ColorWorks.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED4C24366CED00967F82 /* UIColor+ColorWorks.m */; platformFilter = ios; };
+		B8F4ED512436770000967F82 /* CWColorSliderStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED4F2436770000967F82 /* CWColorSliderStackView.h */; platformFilter = ios; };
+		B8F4ED522436770000967F82 /* CWColorSliderStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED502436770000967F82 /* CWColorSliderStackView.m */; platformFilter = ios; };
+		B8F4ED552436811E00967F82 /* CWColorDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED532436811E00967F82 /* CWColorDisplayView.h */; platformFilter = ios; };
+		B8F4ED562436811E00967F82 /* CWColorDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED542436811E00967F82 /* CWColorDisplayView.m */; platformFilter = ios; };
+		B8F4ED592436896800967F82 /* CWColorPickerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED572436844900967F82 /* CWColorPickerDelegate.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F4ED5D243689A400967F82 /* CWColorPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED5B243689A400967F82 /* CWColorPickerViewController.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F4ED5E243689A400967F82 /* CWColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED5C243689A400967F82 /* CWColorPickerViewController.m */; platformFilter = ios; };
+		B8F4ED612436941300967F82 /* CWColorSpaceType.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED60243692B900967F82 /* CWColorSpaceType.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F4ED6A2436965C00967F82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED692436965C00967F82 /* AppDelegate.m */; };
+		B8F4ED6D2436965C00967F82 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED6C2436965C00967F82 /* SceneDelegate.m */; };
+		B8F4ED702436965C00967F82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED6F2436965C00967F82 /* ViewController.m */; };
+		B8F4ED732436965C00967F82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F4ED712436965C00967F82 /* Main.storyboard */; };
+		B8F4ED752436965F00967F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F4ED742436965F00967F82 /* Assets.xcassets */; };
+		B8F4ED782436965F00967F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F4ED762436965F00967F82 /* LaunchScreen.storyboard */; };
+		B8F4ED7B2436965F00967F82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED7A2436965F00967F82 /* main.m */; };
+		B8F4ED80243697E700967F82 /* ColorWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F4ED2E2436427500967F82 /* ColorWorks.framework */; };
+		B8F4ED81243697E700967F82 /* ColorWorks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B8F4ED2E2436427500967F82 /* ColorWorks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8F4ED82243697E700967F82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8F4ED252436427500967F82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8F4ED2D2436427500967F82;
+			remoteInfo = ColorWorks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B8F4ED84243697E700967F82 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B8F4ED81243697E700967F82 /* ColorWorks.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B8F4ED2E2436427500967F82 /* ColorWorks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ColorWorks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F4ED312436427500967F82 /* ColorWorks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorWorks.h; sourceTree = "<group>"; };
 		B8F4ED322436427500967F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8F4ED3A243642F800967F82 /* CWColorSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorSlider.h; sourceTree = "<group>"; };
+		B8F4ED3B243642F800967F82 /* CWColorSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWColorSlider.m; sourceTree = "<group>"; };
+		B8F4ED3E2436432900967F82 /* CWColorSliderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorSliderDelegate.h; sourceTree = "<group>"; };
+		B8F4ED3F243668F500967F82 /* UIColor+ColorWorks_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWorks_Internal.h"; sourceTree = "<group>"; };
+		B8F4ED40243668F500967F82 /* UIColor+ColorWorks_Internal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWorks_Internal.m"; sourceTree = "<group>"; };
+		B8F4ED44243669E900967F82 /* CWSliderType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWSliderType.h; sourceTree = "<group>"; };
+		B8F4ED4724366B4100967F82 /* CWGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWGradientView.h; sourceTree = "<group>"; };
+		B8F4ED4824366B4200967F82 /* CWGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWGradientView.m; sourceTree = "<group>"; };
+		B8F4ED4B24366CED00967F82 /* UIColor+ColorWorks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWorks.h"; sourceTree = "<group>"; };
+		B8F4ED4C24366CED00967F82 /* UIColor+ColorWorks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWorks.m"; sourceTree = "<group>"; };
+		B8F4ED4F2436770000967F82 /* CWColorSliderStackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorSliderStackView.h; sourceTree = "<group>"; };
+		B8F4ED502436770000967F82 /* CWColorSliderStackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWColorSliderStackView.m; sourceTree = "<group>"; };
+		B8F4ED532436811E00967F82 /* CWColorDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorDisplayView.h; sourceTree = "<group>"; };
+		B8F4ED542436811E00967F82 /* CWColorDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWColorDisplayView.m; sourceTree = "<group>"; };
+		B8F4ED572436844900967F82 /* CWColorPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorPickerDelegate.h; sourceTree = "<group>"; };
+		B8F4ED5B243689A400967F82 /* CWColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorPickerViewController.h; sourceTree = "<group>"; };
+		B8F4ED5C243689A400967F82 /* CWColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWColorPickerViewController.m; sourceTree = "<group>"; };
+		B8F4ED60243692B900967F82 /* CWColorSpaceType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorSpaceType.h; sourceTree = "<group>"; };
+		B8F4ED662436965C00967F82 /* ColorWorks-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ColorWorks-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F4ED682436965C00967F82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B8F4ED692436965C00967F82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B8F4ED6B2436965C00967F82 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		B8F4ED6C2436965C00967F82 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		B8F4ED6E2436965C00967F82 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B8F4ED6F2436965C00967F82 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B8F4ED722436965C00967F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8F4ED742436965F00967F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8F4ED772436965F00967F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B8F4ED792436965F00967F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8F4ED7A2436965F00967F82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +104,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B8F4ED632436965C00967F82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8F4ED80243697E700967F82 /* ColorWorks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,7 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				B8F4ED302436427500967F82 /* ColorWorks */,
+				B8F4ED672436965C00967F82 /* ColorWorks-App */,
 				B8F4ED2F2436427500967F82 /* Products */,
+				B8F4ED7F243697E600967F82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -39,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F4ED2E2436427500967F82 /* ColorWorks.framework */,
+				B8F4ED662436965C00967F82 /* ColorWorks-App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,8 +139,99 @@
 			children = (
 				B8F4ED312436427500967F82 /* ColorWorks.h */,
 				B8F4ED322436427500967F82 /* Info.plist */,
+				B8F4ED43243669AF00967F82 /* Categories */,
+				B8F4ED5A2436897100967F82 /* Controllers */,
+				B8F4ED39243642BE00967F82 /* Controls */,
+				B8F4ED582436887300967F82 /* Delegates */,
+				B8F4ED5F2436924500967F82 /* Types */,
+				B8F4ED4624366B1C00967F82 /* Views */,
 			);
 			path = ColorWorks;
+			sourceTree = "<group>";
+		};
+		B8F4ED39243642BE00967F82 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED3A243642F800967F82 /* CWColorSlider.h */,
+				B8F4ED3B243642F800967F82 /* CWColorSlider.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		B8F4ED43243669AF00967F82 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED3F243668F500967F82 /* UIColor+ColorWorks_Internal.h */,
+				B8F4ED40243668F500967F82 /* UIColor+ColorWorks_Internal.m */,
+				B8F4ED4B24366CED00967F82 /* UIColor+ColorWorks.h */,
+				B8F4ED4C24366CED00967F82 /* UIColor+ColorWorks.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B8F4ED4624366B1C00967F82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED532436811E00967F82 /* CWColorDisplayView.h */,
+				B8F4ED542436811E00967F82 /* CWColorDisplayView.m */,
+				B8F4ED4F2436770000967F82 /* CWColorSliderStackView.h */,
+				B8F4ED502436770000967F82 /* CWColorSliderStackView.m */,
+				B8F4ED4724366B4100967F82 /* CWGradientView.h */,
+				B8F4ED4824366B4200967F82 /* CWGradientView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8F4ED582436887300967F82 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED572436844900967F82 /* CWColorPickerDelegate.h */,
+				B8F4ED3E2436432900967F82 /* CWColorSliderDelegate.h */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B8F4ED5A2436897100967F82 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED5B243689A400967F82 /* CWColorPickerViewController.h */,
+				B8F4ED5C243689A400967F82 /* CWColorPickerViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B8F4ED5F2436924500967F82 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED60243692B900967F82 /* CWColorSpaceType.h */,
+				B8F4ED44243669E900967F82 /* CWSliderType.h */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		B8F4ED672436965C00967F82 /* ColorWorks-App */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4ED682436965C00967F82 /* AppDelegate.h */,
+				B8F4ED692436965C00967F82 /* AppDelegate.m */,
+				B8F4ED6B2436965C00967F82 /* SceneDelegate.h */,
+				B8F4ED6C2436965C00967F82 /* SceneDelegate.m */,
+				B8F4ED6E2436965C00967F82 /* ViewController.h */,
+				B8F4ED6F2436965C00967F82 /* ViewController.m */,
+				B8F4ED712436965C00967F82 /* Main.storyboard */,
+				B8F4ED742436965F00967F82 /* Assets.xcassets */,
+				B8F4ED762436965F00967F82 /* LaunchScreen.storyboard */,
+				B8F4ED792436965F00967F82 /* Info.plist */,
+				B8F4ED7A2436965F00967F82 /* main.m */,
+			);
+			path = "ColorWorks-App";
+			sourceTree = "<group>";
+		};
+		B8F4ED7F243697E600967F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +241,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F4ED5D243689A400967F82 /* CWColorPickerViewController.h in Headers */,
+				B8F4ED4924366B4200967F82 /* CWGradientView.h in Headers */,
+				B8F4ED592436896800967F82 /* CWColorPickerDelegate.h in Headers */,
+				B8F4ED4D24366CED00967F82 /* UIColor+ColorWorks.h in Headers */,
+				B8F4ED612436941300967F82 /* CWColorSpaceType.h in Headers */,
+				B8F4ED512436770000967F82 /* CWColorSliderStackView.h in Headers */,
+				B8F4ED41243668F500967F82 /* UIColor+ColorWorks_Internal.h in Headers */,
 				B8F4ED332436427500967F82 /* ColorWorks.h in Headers */,
+				B8F4ED552436811E00967F82 /* CWColorDisplayView.h in Headers */,
+				B8F4ED3C243642F800967F82 /* CWColorSlider.h in Headers */,
+				B8F4ED45243669E900967F82 /* CWSliderType.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +276,25 @@
 			productReference = B8F4ED2E2436427500967F82 /* ColorWorks.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B8F4ED652436965C00967F82 /* ColorWorks-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8F4ED7E2436965F00967F82 /* Build configuration list for PBXNativeTarget "ColorWorks-App" */;
+			buildPhases = (
+				B8F4ED622436965C00967F82 /* Sources */,
+				B8F4ED632436965C00967F82 /* Frameworks */,
+				B8F4ED642436965C00967F82 /* Resources */,
+				B8F4ED84243697E700967F82 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8F4ED83243697E700967F82 /* PBXTargetDependency */,
+			);
+			name = "ColorWorks-App";
+			productName = "ColorWorks-App";
+			productReference = B8F4ED662436965C00967F82 /* ColorWorks-App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -94,6 +305,9 @@
 				ORGANIZATIONNAME = CreatureCoding;
 				TargetAttributes = {
 					B8F4ED2D2436427500967F82 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					B8F4ED652436965C00967F82 = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -112,6 +326,7 @@
 			projectRoot = "";
 			targets = (
 				B8F4ED2D2436427500967F82 /* ColorWorks */,
+				B8F4ED652436965C00967F82 /* ColorWorks-App */,
 			);
 		};
 /* End PBXProject section */
@@ -124,6 +339,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B8F4ED642436965C00967F82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8F4ED782436965F00967F82 /* LaunchScreen.storyboard in Resources */,
+				B8F4ED752436965F00967F82 /* Assets.xcassets in Resources */,
+				B8F4ED732436965C00967F82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -131,10 +356,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F4ED4E24366CED00967F82 /* UIColor+ColorWorks.m in Sources */,
+				B8F4ED3D243642F800967F82 /* CWColorSlider.m in Sources */,
+				B8F4ED42243668F500967F82 /* UIColor+ColorWorks_Internal.m in Sources */,
+				B8F4ED5E243689A400967F82 /* CWColorPickerViewController.m in Sources */,
+				B8F4ED522436770000967F82 /* CWColorSliderStackView.m in Sources */,
+				B8F4ED4A24366B4200967F82 /* CWGradientView.m in Sources */,
+				B8F4ED562436811E00967F82 /* CWColorDisplayView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8F4ED622436965C00967F82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8F4ED702436965C00967F82 /* ViewController.m in Sources */,
+				B8F4ED6A2436965C00967F82 /* AppDelegate.m in Sources */,
+				B8F4ED7B2436965F00967F82 /* main.m in Sources */,
+				B8F4ED6D2436965C00967F82 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8F4ED83243697E700967F82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8F4ED2D2436427500967F82 /* ColorWorks */;
+			targetProxy = B8F4ED82243697E700967F82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B8F4ED712436965C00967F82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8F4ED722436965C00967F82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B8F4ED762436965F00967F82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8F4ED772436965F00967F82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B8F4ED342436427500967F82 /* Debug */ = {
@@ -271,7 +541,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.creaturecoding.ColorWorks;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -294,7 +567,49 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.creaturecoding.ColorWorks;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B8F4ED7C2436965F00967F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RUMWXF5QY3;
+				INFOPLIST_FILE = "ColorWorks-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.creaturecoding.ColorWorks-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B8F4ED7D2436965F00967F82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RUMWXF5QY3;
+				INFOPLIST_FILE = "ColorWorks-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.creaturecoding.ColorWorks-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -315,6 +630,15 @@
 			buildConfigurations = (
 				B8F4ED372436427500967F82 /* Debug */,
 				B8F4ED382436427500967F82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8F4ED7E2436965F00967F82 /* Build configuration list for PBXNativeTarget "ColorWorks-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8F4ED7C2436965F00967F82 /* Debug */,
+				B8F4ED7D2436965F00967F82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

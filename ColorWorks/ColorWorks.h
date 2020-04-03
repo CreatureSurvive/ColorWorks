@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ColorWorks/CWColorPickerViewController.h>
+#import <ColorWorks/CWColorPickerDelegate.h>
+#import <ColorWorks/CWColorSpaceType.h>
+#import <ColorWorks/UIColor+ColorWorks.h>
 
 //! Project version number for ColorWorks.
 FOUNDATION_EXPORT double ColorWorksVersionNumber;

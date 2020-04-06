@@ -252,6 +252,5 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     [self colorPickerDidUpdateColor:_colorDataSource[indexPath.section].colors[indexPath.row]];
 }
-}
 
 @end

@@ -96,9 +96,12 @@
     _trailingLabel.text = [NSString stringWithFormat:@"%.f", self.value];
 }
 
-- (void)_updateSlider {
+- (void)_updateSlider:(BOOL)finalized {
     if (self.delegate && [self.delegate respondsToSelector:@selector(slider:valueChanged:)]) {
         [self.delegate slider:self valueChanged:self.value];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(slider:valueFinishedChange:)]) {
+        [self.delegate slider:self valueFinishedChange:self.value];
     }
     _trailingLabel.text = [NSString stringWithFormat:@"%.f", self.value];
 }
@@ -110,24 +113,24 @@
 #pragma mark - UISliderTracking
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     BOOL tracking = [super beginTrackingWithTouch:touch withEvent:event];
-    [self _updateSlider];
+    [self _updateSlider:NO];
     return tracking;
 }
 
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     BOOL tracking = [super continueTrackingWithTouch:touch withEvent:event];
-    [self _updateSlider];
+    [self _updateSlider:NO];
     return tracking;
 }
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     [super endTrackingWithTouch:touch withEvent:event];
-    [self _updateSlider];
+    [self _updateSlider:YES];
 }
 
 - (void)cancelTrackingWithEvent:(UIEvent *)event {
     [super cancelTrackingWithEvent:event];
-    [self _updateSlider];
+    [self _updateSlider:YES];
 }
 
 @end

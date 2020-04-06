@@ -19,7 +19,7 @@
         self.masksToBounds = YES;
         self.cornerRadius = 10;
         self.borderWidth = 1;
-        self.borderColor = UIColor.systemGrayColor.CGColor;
+        self.borderColor = UIColor.tertiarySystemFillColor.CGColor;
         self.colors = colors;
     }
     

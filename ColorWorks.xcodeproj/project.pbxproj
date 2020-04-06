@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B820436B2437E66900C50481 /* CWColorCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B82043692437E66900C50481 /* CWColorCollection.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
+		B820436C2437E66900C50481 /* CWColorCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B820436A2437E66900C50481 /* CWColorCollection.m */; };
 		B8F4ED332436427500967F82 /* ColorWorks.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED312436427500967F82 /* ColorWorks.h */; platformFilter = ios; settings = {ATTRIBUTES = (Public, ); }; };
 		B8F4ED3C243642F800967F82 /* CWColorSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F4ED3A243642F800967F82 /* CWColorSlider.h */; platformFilter = ios; };
 		B8F4ED3D243642F800967F82 /* CWColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4ED3B243642F800967F82 /* CWColorSlider.m */; platformFilter = ios; };
@@ -61,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B82043692437E66900C50481 /* CWColorCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWColorCollection.h; sourceTree = "<group>"; };
+		B820436A2437E66900C50481 /* CWColorCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWColorCollection.m; sourceTree = "<group>"; };
 		B8F4ED2E2436427500967F82 /* ColorWorks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ColorWorks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F4ED312436427500967F82 /* ColorWorks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorWorks.h; sourceTree = "<group>"; };
 		B8F4ED322436427500967F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			children = (
 				B8F4ED60243692B900967F82 /* CWColorSpaceType.h */,
 				B8F4ED44243669E900967F82 /* CWSliderType.h */,
+				B82043692437E66900C50481 /* CWColorCollection.h */,
+				B820436A2437E66900C50481 /* CWColorCollection.m */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -244,8 +250,9 @@
 				B8F4ED5D243689A400967F82 /* CWColorPickerViewController.h in Headers */,
 				B8F4ED4924366B4200967F82 /* CWGradientView.h in Headers */,
 				B8F4ED592436896800967F82 /* CWColorPickerDelegate.h in Headers */,
-				B8F4ED4D24366CED00967F82 /* UIColor+ColorWorks.h in Headers */,
 				B8F4ED612436941300967F82 /* CWColorSpaceType.h in Headers */,
+				B8F4ED4D24366CED00967F82 /* UIColor+ColorWorks.h in Headers */,
+				B820436B2437E66900C50481 /* CWColorCollection.h in Headers */,
 				B8F4ED512436770000967F82 /* CWColorSliderStackView.h in Headers */,
 				B8F4ED41243668F500967F82 /* UIColor+ColorWorks_Internal.h in Headers */,
 				B8F4ED332436427500967F82 /* ColorWorks.h in Headers */,
@@ -359,6 +366,7 @@
 				B8F4ED4E24366CED00967F82 /* UIColor+ColorWorks.m in Sources */,
 				B8F4ED3D243642F800967F82 /* CWColorSlider.m in Sources */,
 				B8F4ED42243668F500967F82 /* UIColor+ColorWorks_Internal.m in Sources */,
+				B820436C2437E66900C50481 /* CWColorCollection.m in Sources */,
 				B8F4ED5E243689A400967F82 /* CWColorPickerViewController.m in Sources */,
 				B8F4ED522436770000967F82 /* CWColorSliderStackView.m in Sources */,
 				B8F4ED4A24366B4200967F82 /* CWGradientView.m in Sources */,
@@ -532,13 +540,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ColorWorks/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				"LD_MAP_FILE_PATH[arch=*]" = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.creaturecoding.ColorWorks;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -558,6 +569,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ColorWorks/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -28,12 +28,12 @@
     return [self.view.backgroundColor isDarkColor] ? UIStatusBarStyleLightContent : UIStatusBarStyleDarkContent;
 }
 
-- (void)colorUpdated:(UIColor *)color {
+- (void)colorPickerDidUpdateColor:(UIColor *)color {
     self.view.backgroundColor = color;
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
-- (void)colorPicked:(UIColor *)color {
+- (void)colorPickerDismissedWithColor:(UIColor *)color {
     self.view.backgroundColor = color;
 }
 

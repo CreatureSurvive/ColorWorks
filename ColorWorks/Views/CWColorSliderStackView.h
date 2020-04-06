@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithColor:(UIColor *)color stackType:(CWColorSpaceType)type delegate:(id<CWColorPickerDelegate>)delegate;
 - (void)configureForStackType:(CWColorSpaceType)type color:(UIColor *)color;
 
+- (void)setColor:(UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_END

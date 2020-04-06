@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UICollectionView *colorCollectionView;
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIView *grabberView;
+@property (nonatomic, strong) NSArray<CWColorCollection *> *colorDataSource;
 @end
 
 @implementation CWColorPickerViewController
@@ -40,19 +41,20 @@
         
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.itemSize = CGSizeMake(30, 30);
+    layout.headerReferenceSize = CGSizeMake(40, 30);
     layout.minimumInteritemSpacing = 8;
     layout.minimumLineSpacing = 8;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    if (!_colorCollection) {
-        _colorCollection = [UIColor someColors];
-    }
     _colorCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     _colorCollectionView.backgroundColor = nil;
     _colorCollectionView.dataSource = self;
     _colorCollectionView.delegate = self;
     _colorCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
     [_colorCollectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:@"CELL"];
+    [_colorCollectionView registerClass:UICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER"];
+    
+    [self setColorCollection:_colorCollection];
     
     _backgroundView = [UIView new];
     _backgroundView.layer.cornerRadius = 16;
@@ -115,16 +117,28 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPicked:)]) {
-        [self.delegate colorPicked:self.currentColor];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerDismissedWithColor:)]) {
+        [self.delegate colorPickerDismissedWithColor:self.currentColor];
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.view.frame = CGRectMake(0, UIScreen.mainScreen.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)colorPickerDidUpdateColor:(UIColor *)color {
+    self.currentColor = color;
+    _colorDisplayView.color = color;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerDidUpdateColor:)]) {
+        [self.delegate colorPickerDidUpdateColor:self.currentColor];
     }
 }
 
-- (void)colorUpdated:(UIColor *)color {
-    self.currentColor = color;
-    _colorDisplayView.color = color;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(colorUpdated:)]) {
-        [self.delegate colorUpdated:self.currentColor];
+- (void)colorPickerDidChangeColor:(UIColor *)color {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerDidChangeColor:)]) {
+        [self.delegate colorPickerDidChangeColor:self.currentColor];
     }
 }
 
@@ -165,18 +179,36 @@
     }
 }
 
-- (void)setColorCollection:(NSArray<UIColor *> *)colorCollection {
+- (void)setColor:(UIColor *)color {
+    self.currentColor = color;
+    _colorDisplayView.color = color;
+    [_sliderStackView setColor:color];
+}
+
+- (void)setColorCollection:(CWColorCollection *)colorCollection {
     _colorCollection = colorCollection;
+    
+    NSArray *defaultColors = @[
+        [CWColorCollection defaultSystemColorsCollection],
+        [CWColorCollection defaultPrimaryColorsCollection],
+        [CWColorCollection defaultHueColorsCollection]
+    ];
+    
+    _colorDataSource = colorCollection ? [@[colorCollection] arrayByAddingObjectsFromArray:defaultColors] : defaultColors;
     [_colorCollectionView reloadData];
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return _colorDataSource.count;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _colorCollection.count;
+    return _colorDataSource[section].count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL" forIndexPath:indexPath];
-    cell.backgroundColor = _colorCollection[indexPath.row];
+    cell.backgroundColor = _colorDataSource[indexPath.section].colors[indexPath.row];
     cell.layer.cornerRadius = 15;
     cell.layer.masksToBounds = YES;
     cell.layer.borderWidth = 1;
@@ -184,9 +216,42 @@
     return cell;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *headerView;
+    
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HEADER" forIndexPath:indexPath];
+        
+        NSInteger labelTag = 0x2727272;
+        UILabel *label = [headerView viewWithTag:labelTag];
+        
+        if (!label) {
+            label = [UILabel new];
+            [headerView addSubview:label];
+            [label setTag:labelTag];
+            [label setTextColor:UIColor.secondaryLabelColor];
+            [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+            [label.topAnchor constraintEqualToAnchor:headerView.topAnchor].active = YES;
+            [label.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor].active = YES;
+            [label.leadingAnchor constraintEqualToAnchor:headerView.leadingAnchor].active = YES;
+            [label.trailingAnchor constraintEqualToAnchor:headerView.trailingAnchor].active = YES;
+        }
+        
+        label.text = _colorDataSource[indexPath.section].title.uppercaseString;
+    }
+    
+    return headerView;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(40, 40);
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    [self colorUpdated:_colorCollection[indexPath.row]];
+    [self colorPickerDidUpdateColor:_colorDataSource[indexPath.section].colors[indexPath.row]];
+}
 }
 
 @end

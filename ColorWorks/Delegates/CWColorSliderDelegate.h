@@ -10,6 +10,7 @@
 @protocol CWColorSliderDelegate <NSObject>
 
 - (void)slider:(CWColorSlider *)colorSlider valueChanged:(CGFloat)value;
+- (void)slider:(CWColorSlider *)colorSlider valueFinishedChange:(CGFloat)value;
 - (void)slider:(CWColorSlider *)colorSlider colorChanged:(UIColor *)color;
 
 @end

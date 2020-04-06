@@ -12,8 +12,9 @@
 @protocol CWColorPickerDelegate <NSObject>
 
 @optional
-- (void)colorPicked:(UIColor *)color;
-- (void)colorUpdated:(UIColor *)color;
+- (void)colorPickerDismissedWithColor:(UIColor *)color;
+- (void)colorPickerDidUpdateColor:(UIColor *)color;
+- (void)colorPickerDidChangeColor:(UIColor *)color;
 
 @end
 

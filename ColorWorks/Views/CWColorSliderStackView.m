@@ -98,7 +98,8 @@
 }
 
 - (void)applyColorExcludingSlider:(CWColorSlider *)excludingSlider {
-    if (self.delegate) [self.delegate colorUpdated:_color];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerDidUpdateColor:)])
+        [self.delegate colorPickerDidUpdateColor:_color];
     
     for (CWColorSlider *slider in _sliders) {
         if (slider != excludingSlider) {
@@ -122,6 +123,11 @@
 - (void)slider:(CWColorSlider *)colorSlider valueChanged:(CGFloat)value {
     _color = [_color colorByApplyingValue:value / colorSlider.maximumValue sliderType:colorSlider.type];
     [self applyColorExcludingSlider:colorSlider];
+}
+
+- (void)slider:(CWColorSlider *)colorSlider valueFinishedChange:(CGFloat)value {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerDidChangeColor:)])
+        [self.delegate colorPickerDidChangeColor:_color];
 }
 
 

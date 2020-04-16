@@ -50,18 +50,11 @@
 }
 
 + (instancetype)defaultPrimaryColorsCollection {
-    return [CWColorCollection collectionWithTitle:@"PRIMARY COLORS" colors:@[
-        UIColor.redColor,
-        UIColor.orangeColor,
-        UIColor.yellowColor,
-        UIColor.greenColor,
-        UIColor.blueColor,
-        UIColor.purpleColor,
-        UIColor.whiteColor,
-        UIColor.grayColor,
-        UIColor.darkGrayColor,
-        UIColor.blackColor
-    ]];
+    NSMutableArray *colors = [NSMutableArray new];
+    for (NSInteger deg = 0; deg <= 360; deg += 30) {
+        [colors addObject:[UIColor colorWithHue:1.0f * deg / 360.0f saturation:1.0f brightness:1.0f alpha:1.0f]];
+    }
+    return [CWColorCollection collectionWithTitle:@"PRIMARY COLORS" colors:colors];
 }
 
 + (instancetype)defaultHueColorsCollection {

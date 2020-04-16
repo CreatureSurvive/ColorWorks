@@ -96,22 +96,23 @@
     _sliderStackView.translatesAutoresizingMaskIntoConstraints = NO;
     _typeSelectionView.translatesAutoresizingMaskIntoConstraints = NO;
     _backgroundView.translatesAutoresizingMaskIntoConstraints = NO;
-
-    [_grabberView.widthAnchor constraintEqualToConstant:75].active = YES;
-    [_grabberView.heightAnchor constraintEqualToConstant:6].active = YES;
-    [_grabberView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [_grabberView.topAnchor constraintEqualToAnchor:_backgroundView.topAnchor constant:12].active = YES;
-    
-    [_backgroundView.heightAnchor constraintEqualToAnchor:_viewStack.heightAnchor constant:46].active = YES;
-    [_backgroundView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-32].active = YES;
-    [_backgroundView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:16].active = YES;
-    [_backgroundView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-16].active = YES;
-
-    [_viewStack.leadingAnchor constraintEqualToAnchor:_backgroundView.leadingAnchor constant:16].active = YES;
-    [_viewStack.trailingAnchor constraintEqualToAnchor:_backgroundView.trailingAnchor constant:-16].active = YES;
-    [_viewStack.bottomAnchor constraintEqualToAnchor:_backgroundView.bottomAnchor constant:-16].active = YES;
-    
-    [_colorDisplayView.heightAnchor constraintEqualToConstant: 40].active = YES;
+    [NSLayoutConstraint activateConstraints:@[
+        [_grabberView.widthAnchor constraintEqualToConstant:75],
+        [_grabberView.heightAnchor constraintEqualToConstant:6],
+        [_grabberView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+        [_grabberView.topAnchor constraintEqualToAnchor:_backgroundView.topAnchor constant:12],
+        
+        [_backgroundView.heightAnchor constraintEqualToAnchor:_viewStack.heightAnchor constant:46],
+        [_backgroundView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-32],
+        [_backgroundView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:16],
+        [_backgroundView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-16],
+        
+        [_viewStack.leadingAnchor constraintEqualToAnchor:_backgroundView.leadingAnchor constant:16],
+        [_viewStack.trailingAnchor constraintEqualToAnchor:_backgroundView.trailingAnchor constant:-16],
+        [_viewStack.bottomAnchor constraintEqualToAnchor:_backgroundView.bottomAnchor constant:-16],
+        
+        [_colorDisplayView.heightAnchor constraintEqualToConstant: 40]
+    ]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -212,7 +213,7 @@
     cell.layer.cornerRadius = 15;
     cell.layer.masksToBounds = YES;
     cell.layer.borderWidth = 1;
-    cell.layer.borderColor = UIColor.systemGrayColor.CGColor;
+    cell.layer.borderColor = UIColor.tertiarySystemFillColor.CGColor;
     return cell;
 }
 
@@ -232,10 +233,12 @@
             [label setTag:labelTag];
             [label setTextColor:UIColor.secondaryLabelColor];
             [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-            [label.topAnchor constraintEqualToAnchor:headerView.topAnchor].active = YES;
-            [label.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor].active = YES;
-            [label.leadingAnchor constraintEqualToAnchor:headerView.leadingAnchor].active = YES;
-            [label.trailingAnchor constraintEqualToAnchor:headerView.trailingAnchor].active = YES;
+            [NSLayoutConstraint activateConstraints:@[
+                [label.topAnchor constraintEqualToAnchor:headerView.topAnchor],
+                [label.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor],
+                [label.leadingAnchor constraintEqualToAnchor:headerView.leadingAnchor],
+                [label.trailingAnchor constraintEqualToAnchor:headerView.trailingAnchor]
+            ]];
         }
         
         label.text = _colorDataSource[indexPath.section].title.uppercaseString;
